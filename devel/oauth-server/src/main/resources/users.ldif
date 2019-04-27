@@ -1,0 +1,49 @@
+dn: dc=oauth,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: oauth
+
+dn: ou=groups,dc=oauth,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=oauth,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=amit,ou=people,dc=oauth,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Mithu Tokder
+sn: Tokder
+uid: mithu
+userPassword: password
+
+dn: uid=user,ou=people,dc=oauth,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Sachin T
+sn: Sachin
+uid: user
+userPassword: password
+
+dn: cn=admin,ou=groups,dc=oauth,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: admin
+ou: admins
+uniqueMember: uid=amit,ou=people,dc=oauth,dc=com
+
+dn: cn=user,ou=groups,dc=oauth,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: user
+ou: users
+uniqueMember: uid=user,ou=people,dc=oauth,dc=com
