@@ -6,7 +6,6 @@ services:
     restart: on-failure
     user: postgres
     volumes:
-      - postgres_data:/var/lib/postgresql
       - ./sql:/docker-entrypoint-initdb.d
     environment:
       - POSTGRES_USER=admin-user
@@ -16,4 +15,3 @@ services:
       - "5435:5432"
 volumes:
   gradle_user_home:
-  postgres_data:
