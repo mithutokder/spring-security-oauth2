@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db:
+    image: "postgres:14.5"
+    container_name: oauth-server-db
+    restart: on-failure
+    user: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql
+      - ./sql:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_USER=admin-user
+      - POSTGRES_PASSWORD=admin@123
+      - POSTGRES_DB=authorization-db
+    ports:
+      - "5435:5432"
+volumes:
+  gradle_user_home:
+  postgres_data:
